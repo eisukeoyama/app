@@ -1,0 +1,53 @@
+<h1>OUTBOOK</h1>
+<h3>投稿詳細</h3>
+<div class="book">
+  <p><%= @book.namer %></p>
+  <p><%= @book.author %></p>
+  <p><%= @book.year %></p>
+  <p><%= @book.company %></p>
+  <p><%= @book.learn %></p>
+  <p><%= @book.practice %></p>
+  <p><%= @book.created_at %></p>
+
+  <% if user_signed_in? %>
+      <% if current_user.already_liked?(@book) %>
+        <%= button_to book_like_path(@book), method: :delete do %>
+          <i class="fas fa-heart"></i><%= @book.likes.count %>
+        <% end %>
+      <% else %>
+        <%= button_to book_likes_path(@book), method: :post do %>
+          <i class="fas fa-heart"></i><%= @book.likes.count %>
+        <% end %>
+      <% end %>
+    <% else %>
+    <i class="fas fa-heart"></i><%= @book.likes.count %>
+    <% end %>
+<%= link_to "編集する", edit_book_path(@book.id) %>   
+</div>
+
+<h2>いいねしたユーザー</h2>
+<% @book.liked_users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>
+<div class="comment-wrapper">
+  <p>コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div>
+      <%= c.user.email unless c.user.blank? %>
+      <br>
+      <%= c.content %>
+    </div>
+      <br>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= form_with(model: [@book, @comment], local: true) do |f| %>
+      <%= f.text_area :content %>
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "投稿一覧に戻る", books_path %>

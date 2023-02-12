@@ -1,0 +1,41 @@
+<h1>users#show</h1>
+<p>名前 : <%= @user.name %></p>
+<p>メールアドレス : <%= @user.email %></p>
+<%= image_tag @user.image_url, size: "250x200" if @user.image? %>
+<p>プロフィール : <%= @user.profile %></p>
+
+<% if current_user.id == @user.id %>
+  <%= link_to "編集する", edit_user_registration_path %>
+<% end %>
+
+<%= render 'follow_form' %>
+<%= render 'stats' %>
+
+
+<h2>ユーザーの投稿一覧</h2>
+<% @user.books.each do |t| %>
+  <%= t.user.name %>
+      <%= t.namer %>
+      <%= t.author %>
+      <%= t.year %>
+      <%= t.company %>
+      <%= t.category %>
+      <%= t.learn %>
+      <%= t.practice %>
+<% end %>
+
+<!-- 以下はいいね機能を実装している場合-->
+<h2>ユーザーがいいねした投稿一覧</h2>
+<% @user.liked_books.each do |t| %>
+  <%= t.user.name %>
+      <%= t.namer %>
+      <%= t.author %>
+      <%= t.year %>
+      <%= t.company %>
+      <%= t.category %>
+      <%= t.learn %>
+      <%= t.practice %>
+<% end %>
+<!-- ここまで-->
+
+<%= link_to "投稿一覧に戻る", books_path %>
