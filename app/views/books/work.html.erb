@@ -1,16 +1,45 @@
-<h1>仕事術・整理法</h1>
+<%= stylesheet_link_tag "work", :media => "all" %>
+
+ <div class="books-container">
+ <p style="font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 48px;
+
+color: #000000;">仕事術・整理法</p>
 <% @books.each do |t| %>
-  <% if t.category == "work" %>  
-      <%= t.namer %>
-      <%= t.author %>
-      <%= t.year %>
-      <%= t.company %>
-      <%= t.learn %>
-      <%= t.practice %>
-      <%= t.created_at %>
-    <%= link_to "詳細へ", book_path(t.id) %>
-    <%= link_to "編集する", edit_book_path(t.id) %> 
-    <%= button_to "削除する", book_path(t.id), method: :delete %>
+  <% if t.category == "仕事術・整理法" %>  
+  <div class="book">
+    <li class="right_cont-inner">
+    <h12><%= link_to t.user.name, user_path(t.user.id) %></h12>
+    <h13><%= image_tag t.user.image_url, size: "250x200" if t.user.image? %></h13>
+    
+    <h14><%= t.namer %></h14>
+    <h15> <%= t.author %></h15>
+    <h16><%= t.category %></h16>
+    <h17> <%= t.learn %></h17>
+    </li>
+  
+    
+  <% if user_signed_in? %>
+      <% if current_user.already_liked?(t) %>
+          <%= button_to book_like_path(id: t.id, book_id: t.id), method: :delete do %>
+            <i class="fa-solid fa-heart"></i><%= t.likes.count %>
+          <% end %>
+      <% else %>
+          <%= button_to book_likes_path(id: t.id, book_id: t.id), method: :post do %>
+            <i class="fa-regular fa-heart"></i><%= t.likes.count %>
+          <% end %>
+      <% end %>
+
+  <% else %>
+  <i class="fa-solid fa-heart"></i><%= t.likes.count %>
   <% end %>
+  <h18><%= t.created_at.strftime('%Y/%m/%d') %></h18>
+  <h19><%= link_to "詳細へ", book_path(t.id) %></h19>
+  <h20><%= link_to "編集する", edit_book_path(t.id) %> </h20>
+  <h21><%= button_to "削除する", book_path(t.id), method: :delete %></h21>
+  <% end %>
+  </div>
 <% end %>
-<%= link_to "投稿一覧に戻る", books_path %>

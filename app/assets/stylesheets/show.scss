@@ -1,0 +1,25 @@
+// Place all the styles related to the relations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+    padding: 0;
+    margin: 0;
+  }
+.books-show  {
+    z-index: 10;
+    background: #fff;
+    margin-top: 60px
+}
+
+
+.book{
+    margin:  0;             /* デフォルトCSS打ち消し */
+    padding:  0;            /* デフォルトCSS打ち消し */
+    list-style:  none;      /* デフォルトCSS打ち消し */
+    position: sticky;
+    border:  solid 1px;     /* 枠線指定 */
+    padding: 0 20px;        /* 余白指定 */
+    margin-bottom:  20px;   /* 要素同士の空き指定 */
+
+
+}

@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Outbook2</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<%= csrf_meta_tags %>
-<%= csp_meta_tag %>
-<script src = "https://kit.fontawesome.com/c349e0f3fa.js" crossorigin="anonymous"></script>
-<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  </head>
+ <head>
+  <title>Outbook</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <script src = "https://kit.fontawesome.com/c349e0f3fa.js" crossorigin="anonymous"></script>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+ </head>
 
   <body>
   <header>
-  <h1>OUTBOOK</h1>
-  <div class="header-list">
+  <h1>Outbook</h1>
+
+  <% if user_signed_in? %><form action="https://outbook.onrender.com/books" method="get">
+  <input id="sbox1"  id="s" name="s" type="text" placeholder="サイト内を検索" />
+  </form><% end %>
+ 
+  <h2><% if user_signed_in? %><%= link_to "新規投稿へ", new_book_path %><% end %></h2>
+  <h3><% if user_signed_in? %><%= link_to "投稿一覧", books_path %><% end %></h3>
+    
    <ul>
     <% if user_signed_in? %>
      <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
@@ -21,7 +28,21 @@
      <li><%= link_to "ログイン", new_user_session_path %></li>
     <% end %>
    </ul>
-  </div>
+
+   <h4><% if user_signed_in? %>
+   <%= link_to "マイページ", user_path(current_user.id) %>
+   <% end %></h4>
+   
+   <div class="header-list">
+   <h5>ジャンル別検索</h5>
+   <h6><%= link_to "人生論・教訓", books_life_path %></h6>
+   <h7><%= link_to "自己啓発", books_self_path %></h7>
+   <h8><%= link_to "仕事術・整理法", books_work_path %></h8>
+   <h9><%= link_to "心理学", books_psychology_path %></h9>
+   <h10><%= link_to "思想", books_thought_path %></h10>
+   <h11><%= link_to "ビジネスライフ", books_business_path %></h11>
+   </div>
+
  </header>
  <main>
   <%= yield %>

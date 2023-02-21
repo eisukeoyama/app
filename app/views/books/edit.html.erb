@@ -1,37 +1,40 @@
+<%= stylesheet_link_tag "new", :media => "all" %>
+<div class="chan">
 <%= form_for @book do |f| %>
     <div class="field">
     <%= f.label :題名 %>
-    <%= f.text_field :namer, :size => 30 %>
+    <%= f.text_field :namer, :size => 83 %>
   </div>
 
   <div class="field">
     <%= f.label :著者名 %>
-    <%= f.text_field :author, :size => 30 %>
+    <%= f.text_field :author, :size => 80 %>
   </div>
 
   <div class="field">
     <%= f.label :出版年 %>
-    <%= f.text_field :year, :size => 30 %>
+    <%= f.text_field :year, :size => 80 %>
   </div>
 
   <div class="field">
     <%= f.label :出版社 %>
-    <%= f.text_field :company, :size => 30 %>
+    <%= f.text_field :company, :size => 80 %>
   </div>
 
   <div class="field">
     <%= f.label :学びのカテゴリー %>
-    <%= f.select :category, [["人生論・教訓", "life"], ["自己啓発", "self"], ["仕事術・整理法", "work"],["心理学", "psychology"], ["思想", "thought"], ["ビジネスライフ", "business"]], include_blank: "選択してください" %>
+    <%= f.select :category, [["人生論・教訓", "人生論・教訓"], ["自己啓発", "自己啓発"], ["仕事術・整理法", "仕事術・整理法"],["心理学", "心理学"], ["思想", "思想"], ["ビジネスライフ", "ビジネスライフ"]], include_blank: "選択してください" %>
   </div>
 
   <div class="field">
-    <%= f.label :学んだこと %>
-    <%= f.text_area :learn, :size => "30x2" %>
+    <%= f.label :学んだこと %><br>
+    <%= f.text_area :learn, :size => "100x10" %>
   </div>
 
   <div class="field">
-    <%= f.label :実践すること %>
-    <%= f.text_area :practice, :size => "30x2" %>
+    <%= f.label :実践すること %><br>
+    <%= f.text_area :practice, :size => "100x10" %>
   </div>
   <%= f.submit "編集する" %>
   <% end %>
+  </div>

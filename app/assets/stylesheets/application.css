@@ -13,3 +13,260 @@
  *= require_tree .
  *= require_self
  */
+ * {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  }
+
+  header {
+z-index: 30;
+position: fixed;
+width: 1440px;
+height: 61px;
+left: 0px;
+top: 0px;
+
+background: #FFE100;
+  }
+  header a {
+    color: #000000; 
+    text-decoration: none; 
+  }
+  header h1 {position: fixed;
+    width: 168px;
+    height: 48px;
+    left: 89px;
+    top: 4px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    
+    color: #000000;
+  }
+
+    #sbox1{
+        position: fixed;
+width: 540px;
+height: 40px;
+left: 346px;
+top: 6px;
+
+background: #FFFFFF;
+border: 1px solid #7A7E7E;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 5px;}
+
+
+header h2 {position: fixed;
+    width: 138px;
+    height: 22px;
+    left: 880px;
+    top: 23px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    
+    color: #000000;}
+header h3 {position: fixed;
+    width: 138px;
+    height: 22px;
+    left: 960px;
+    top: 23px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    
+    color: #000000;}
+    
+
+  
+  header ul {position: fixed;
+    width: 138px;
+    height: 22px;
+    left: 1070px;
+    top: 23px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    
+    color: #000000;
+  }
+  header li {
+    list-style: none;
+    margin-right: 40px;
+  }
+
+  header button{
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #4676D7;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 10px;
+  }
+
+  header h4 {position: fixed;
+    width: 138px;
+    height: 22px;
+    left: 1140px;
+    top: 23px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    
+    color: #000000;}
+
+    
+
+header h5 {position: fixed;
+  width: 106px;
+  height: 17px;
+  left: 19px;
+  top: 74px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  /* ボックスの高さと同一 */
+  
+  text-align: center;
+  
+  color: #000000;
+  }
+
+
+header h6 {position: fixed;
+  width: 106px;
+  height: 17px;
+  left: 170px;
+  top: 74px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* ボックスの高さと同一 */
+  
+  text-align: center;
+  
+  color: #000000;}
+
+header h7 {position: fixed;
+  width: 106px;
+  height: 17px;
+  left: 300px;
+  top: 74px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* ボックスの高さと同一 */
+  
+  text-align: center;
+  
+  color: #000000;}
+
+  header h8 {position: fixed;
+    width: 106px;
+    height: 17px;
+    left: 430px;
+    top: 74px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* ボックスの高さと同一 */
+    
+    text-align: center;
+    
+    color: #000000;}
+header h9 {position: fixed;
+  width: 106px;
+  height: 17px;
+  left: 560px;
+  top: 74px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* ボックスの高さと同一 */
+  
+  text-align: center;
+  
+  color: #000000;}
+header h10 {position: fixed;
+  width: 106px;
+  height: 17px;
+  left: 690px;
+  top: 74px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* ボックスの高さと同一 */
+  
+  text-align: center;
+  
+  color: #000000;}
+header h11 {position: fixed;
+  width: 106px;
+  height: 17px;
+  left: 820px;
+  top: 74px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* ボックスの高さと同一 */
+  
+  text-align: center;
+  
+  color: #000000;
+   }
+
+   .header-list {
+    z-index: 20;
+    position: fixed;
+    width: 1440px;
+    height: 42px;
+    left: 0px;
+    top: 61px;
+    
+    background: rgb(255, 240, 126);}
